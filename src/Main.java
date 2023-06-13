@@ -30,68 +30,68 @@ public class Main {
     @SuppressWarnings("resource")
     public static void main(String[] args) throws IOException {
 
-        ArrayList<Integer> lista;
-
-        lista = (ArrayList<Integer>) lerArquivoTxt(caminhoArquivo);
-
-        int tamLista = lista.size();
-
-        Algoritmos a = new Algoritmos(lista);
-
-        long inicio, fim;
-
         int opcao;
 
-        System.out.println("Escolha qual algoritmo deseja usar(Digite: 1, 2, 3, 4 ou 5): ");
-        System.out.println("1) SelectionSort;\n2) BubbleSort;\n3) InsertionSort;\n4) MergeSort;\n5) QuickSort;\n6) SAIR.");
-        System.out.print("Digite:");
-        opcao = new Scanner(System.in).nextInt();
-
         do {
+            ArrayList<Integer> array;
+
+            array = (ArrayList<Integer>) lerArquivoTxt(caminhoArquivo);
+
+            int tamarray = array.size();
+
+            Algoritmos a = new Algoritmos(array);
+
+            long inicio;
+            long fim;
+
+            System.out.println("\n-------------------- MENU ------------------");
+            System.out.println("---- Escolha qual algoritmo deseja usar: ---");
+            System.out.println("------- Digite o numemero associado --------");
+            System.out.println("1) SelectionSort;\n2) BubbleSort;\n3) InsertionSort;\n4) MergeSort;\n5) QuickSort;\n6) SAIR.");
+            System.out.print("Digite: ");
+            opcao = new Scanner(System.in).nextInt();
+
             switch (opcao) {
                 case 1:
 
-                    inicio = System.currentTimeMillis();
+                    inicio = System.nanoTime();
                     a.selectionSort();
-                    fim = System.currentTimeMillis();
-                    System.out.println("SelectionSort: " + lista + "\n-----> Tempo: " + (fim - inicio));
+                    fim = System.nanoTime();
+                    System.out.println("SelectionSort: " + array + "\n-----> Tempo: " + (double)(fim - inicio)/1_000_000_000.0 + "segundos");
 
                     break;
 
                 case 2:
 
-                    inicio = System.currentTimeMillis();
+                    inicio = System.nanoTime();
                     a.bubbleSort();
-                    fim = System.currentTimeMillis();
-                    System.out.println("BubbleSort: " + lista + "\n-----> Tempo: " + (fim - inicio));
+                    fim = System.nanoTime();
+                    System.out.println("BubbleSort: " + array + "\n-----> Tempo: " + (double)(fim - inicio)/1_000_000_000.0 + "segundos");
 
                     break;
 
                 case 3:
 
-                    inicio = System.currentTimeMillis();
+                    inicio = System.nanoTime();
                     a.insertionSort();
-                    fim = System.currentTimeMillis();
-                    System.out.println("InsertionSort: " + lista + "\n-----> Tempo: " + (fim - inicio));
-
+                    fim = System.nanoTime();
+                    System.out.println("InsertionSort: " + array + "\n-----> Tempo: " + (double)(fim - inicio)/1_000_000_000.0 + "segundos");
                     break;
 
                 case 4:
 
-                    inicio = System.currentTimeMillis();
-                    a.mergeSort(0, (tamLista - 1));
-                    fim = System.currentTimeMillis();
-                    System.out.println("MergeSort: " + lista + "\n-----> Tempo: " + (fim - inicio));
-
+                    inicio = System.nanoTime();
+                    a.mergeSort(0, (tamarray - 1));
+                    fim = System.nanoTime();
+                    System.out.println("MergeSort: " + array + "\n-----> Tempo: " + (double)(fim - inicio)/1_000_000_000.0 + "segundos");
                     break;
 
                 case 5:
 
-                    inicio = System.currentTimeMillis();
-                    a.quickSort(0, tamLista - 1);
-                    fim = System.currentTimeMillis();
-                    System.out.println("QuickSort: " + lista + "\n-----> Tempo: " + (fim - inicio));
-
+                    inicio = System.nanoTime();
+                    a.quickSort(0, tamarray - 1);
+                    fim = System.nanoTime();
+                    System.out.println("QuickSort: " + array + "\n-----> Tempo: " + (double)(fim - inicio)/1_000_000_000.0 + "segundos");
                     break;
 
                 case 6:
