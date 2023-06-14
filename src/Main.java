@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static String caminhoArquivo = "C:\\Users\\Ana Clara Santos\\IdeaProjects\\atvd_ordenacao_ED\\src\\instancias_num\\num.100000.3.txt";
+    static String caminhoArquivo = "C:\\Users\\Ana Clara Santos\\IdeaProjects\\atvd_ordenacao_ED\\src\\instancias_num\\num.100000.1.txt";
     public static List<Integer> lerArquivoTxt(String caminhoArquivo) throws IOException {
         List<Integer> numeros = new ArrayList<>();
 
@@ -87,7 +87,6 @@ public class Main {
                     break;
 
                 case 5:
-
                     inicio = System.nanoTime();
                     a.quickSort(0, tamarray - 1);
                     fim = System.nanoTime();
